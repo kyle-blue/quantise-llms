@@ -1,0 +1,23 @@
+[project]
+name = "test-pretrained-models"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Kyle Doidge",email = "kyle.blue.doidge@gmail.com"}
+]
+readme = "README.md"
+requires-python = "3.12.9"
+dependencies = [
+    "numpy (>=2.2.5,<3.0.0)",
+    "torch (>=2.7.0,<3.0.0)",
+    "matplotlib (>=3.10.3,<4.0.0)",
+    "transformers[torch] (>=4.51.3,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
