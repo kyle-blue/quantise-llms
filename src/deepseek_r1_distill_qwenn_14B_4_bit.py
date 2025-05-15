@@ -1,5 +1,4 @@
 import typing
-import random
 import torch
 import os
 from datasets import IterableDataset, load_dataset
@@ -12,7 +11,7 @@ pretrained_model_path = os.path.normpath(
     os.path.join(script_dir, "..", "downloads", "deepseek_distill_qwen_14b")
 )
 
-quant_config = QuantizeConfig(bits=4, group_size=32)
+quant_config = QuantizeConfig(bits=4, group_size=64, v2=True)
 model = GPTQModel.load(pretrained_model_path, quant_config)
 
 dataset_num_rows = 10_000
@@ -24,7 +23,7 @@ reasoning_dataset = typing.cast(
 )
 shuffled_dataset = reasoning_dataset.shuffle(buffer_size=buffer_size)
 
-num_samples = 3000
+num_samples = 2000
 calibration_sample = list(reasoning_dataset.take(num_samples))
 calibration_sample = [x["prompt"] for x in calibration_sample]
 
