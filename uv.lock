@@ -288,9 +288,26 @@ http = [
 
 [[package]]
 name = "gptqmodel"
-version = "2.2.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/b6/d5/1bf44ba82226e3f81e875415a0c27ab786d2fc0d4bbdde67d797eebb3266/gptqmodel-2.2.0.tar.gz", hash = "sha256:820363ea37691324c4eceee40af040d050719e856bed2dbcd65653a938e90fab", size = 284348, upload-time = "2025-04-03T05:28:13.941Z" }
+version = "3.0.0.dev0"
+source = { git = "https://github.com/ModelCloud/GPTQModel.git?rev=v3.0.0#a0c7753bcbe122de2c042cc804d2cc2da2f5e023" }
+dependencies = [
+    { name = "accelerate" },
+    { name = "datasets" },
+    { name = "device-smi" },
+    { name = "hf-transfer" },
+    { name = "huggingface-hub" },
+    { name = "logbar" },
+    { name = "numpy" },
+    { name = "packaging" },
+    { name = "pillow" },
+    { name = "protobuf" },
+    { name = "random-word" },
+    { name = "safetensors" },
+    { name = "threadpoolctl" },
+    { name = "tokenicer" },
+    { name = "torch" },
+    { name = "transformers" },
+]
 
 [[package]]
 name = "hf-transfer"
@@ -1121,7 +1138,7 @@ gptqmodel-deps = [
 [package.metadata]
 requires-dist = [
     { name = "datasets", specifier = ">=3.6.0" },
-    { name = "gptqmodel", specifier = ">=2.2.0" },
+    { name = "gptqmodel", git = "https://github.com/ModelCloud/GPTQModel.git?rev=v3.0.0" },
     { name = "numpy", specifier = ">=2.2.5" },
     { name = "torch", specifier = ">=2.7.0" },
     { name = "transformers", extras = ["torch"], specifier = ">=4.51.3" },

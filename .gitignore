@@ -1,3 +1,6 @@
+# Quantised models (save these on huggingface)
+quantised_models/
+
 # Huggingface model downloads
 downloads/
 
